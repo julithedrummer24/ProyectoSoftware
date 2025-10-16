@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from app.database import get_db
-from app.schemas.schemas import BusinessStaff, BusinessStaffCreate
+from app.schemas.businessStaff import BusinessStaff, BusinessStaffCreate
 from app.models import BusinessStaff as BusinessStaffModel
 
 router = APIRouter(prefix="/staff", tags=["staff"])

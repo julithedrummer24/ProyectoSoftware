@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from app.database import get_db
-from app.schemas.schemas import ClientStaffReservation, ClientStaffReservationCreate
+from app.schemas.client_staff_reservation import ClientStaffReservation, ClientStaffReservationCreate
 from app.models import ClientStaffReservation as ClientStaffReservationModel
 
 router = APIRouter(prefix="/reservation-assignments", tags=["reservation-assignments"])
