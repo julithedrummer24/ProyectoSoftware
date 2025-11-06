@@ -8,6 +8,7 @@ from app.routes.services import router as services_router
 from app.routes.reservations import router as reservations_router
 from app.routes.client_staff_reservations import router as csr_router
 from app.routes.addresses import router as addresses_router
+from app.database import Base, engine
 
 app = FastAPI(title="Business Reservation API", version="1.0.0")
 
@@ -20,6 +21,15 @@ app.include_router(services_router)
 app.include_router(reservations_router)
 app.include_router(csr_router)
 app.include_router(addresses_router)
+
+def create_tables():
+    print("creando tablas")
+    Base.metadata.create_all(bind=engine)
+
+@app.on_event("startup")
+def on_startup():
+    create_tables()
+
 
 @app.get("/")
 def root():
