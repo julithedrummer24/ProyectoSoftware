@@ -14,3 +14,10 @@ python-multipart==0.0.20
 python-jose[cryptography]==3.3.0
 passlib[bcrypt]==1.7.4
 email-validator==2.1.0
+
+# nuevas requirements
+pytest == 9.0.0
+httpx == 0.28.1
+
+# pytests -v
+# pytest test/test_events.py -v
